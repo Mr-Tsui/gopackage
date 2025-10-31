@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Go 标准库包查询</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Go 标准库包查询</h1>
+    <input type="text" id="searchInput" class="search-box" placeholder="🔍 搜索包名，例如：fmt, net/http, json..." />
+    <div id="searchResults" class="search-results"></div>
+  </header>
+
+  <main>
+    <div id="packageListContainer">
+      <table id="packageTable">
+        <thead>
+          <tr>
+            <th>包名</th>
+            <th>中文释义</th>
+          </tr>
+        </thead>
+        <tbody id="packageList">
+          <!-- 表格内容由 JavaScript动态生成 -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="detailPanel">
+      <div class="detail-header">
+        <h2 id="pkgTitle">包名</h2>
+        <a href="" target="_blank" id="officialLink" class="official-link-btn">查看官方文档</a>
+      </div>
+      <div id="pkgSynopsis" class="pkg-synopsis"></div>
+      <div id="pkgDoc" class="pkg-doc"></div>
+
+      <div class="section-content">
+        <h4>导出函数</h4>
+        <div id="pkgFuncs" class="api-list"></div>
+      </div>
+
+      <div class="section-content">
+        <h4>导出类型</h4>
+        <div id="pkgTypes" class="api-list"></div>
+      </div>
+
+      <button id="backToTable" class="back-btn">返回列表</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>数据来源：<a href="https://pkg.go.dev/" target="_blank">Go 官方文档</a></p>
+    <p>Go 版本：1.25 | 作者：您的名字</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
